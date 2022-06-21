@@ -4,6 +4,3 @@ services:
 
 before-install:
   - docker build -t sample -f Dockerfile .
-
-script:
-  - docker run sample npm run test -- --coverage
