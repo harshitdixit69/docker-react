@@ -1,7 +1,7 @@
-FROM node:12-alpine AS builder
-WORKDIR '/app'
-COPY . .
-RUN npm run build
+FROM node:alpine
 
-FROM nginx
-COPY --from=builder /app/build /usr/share/nginx/html
+WORKDIR '/app'
+
+COPY . .
+
+CMD ["npm", "run", "start"]
